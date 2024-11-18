@@ -1,0 +1,30 @@
+# Node modules
+node_modules
+npm-debug.log
+
+# Optional npm cache
+.npm
+.npmrc
+
+# Environment variables
+.env
+
+# Build artifacts
+dist
+build
+
+# Git files
+.git
+.gitignore
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Logs
+logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
