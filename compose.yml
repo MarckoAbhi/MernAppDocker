@@ -1,0 +1,36 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4002:4002"
+    environment:
+      - MONGODB_URI=mongodb+srv://MarckoAbhi:GFLy0ERHf8dZa515@cluster0.tyt0d.mongodb.net/AKChat?retryWrites=true&w=majority&appName=Cluster0
+    depends_on:
+      - mongodb
+    env_file:
+      - .env 
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3002:3001"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://backend:4002  
+    env_file:
+      - .env
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=MarckoAbhi
+      - MONGO_INITDB_ROOT_PASSWORD=GFLy0ERHf8dZa515
+    env_file:
+      - .env  
+
