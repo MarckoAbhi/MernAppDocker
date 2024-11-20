@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-app-frontend
+spec:
+  replicas: 3  
+  selector:
+    matchLabels:
+      app: chat-app-frontend
+  template:
+    metadata:
+      labels:
+        app: chat-app-frontend
+    spec:
+      containers:
+      - name: chat-app-frontend
+        image: marckostar7321/chat-app-frontend:v1
+        ports:
+        - containerPort: 80
+        env:
+        - name: REACT_APP_BACKEND_URL
+          value: "http://chat-app-backend-service:4002"  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-app-frontend-service
+spec:
+  selector:
+    app: chat-app-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer  # Type LoadBalancer will expose it to external traffic
