@@ -1,6 +1,6 @@
 # Clone the repositary
 
-git clone https://github.com/MarckoAbhi/Chat-mern.git
+git clone https://github.com/MarckoAbhi/MernAppDocker.git
 
 ### Navigate to backend folder and install dependencies:
 
