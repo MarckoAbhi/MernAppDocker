@@ -85,3 +85,18 @@ docker run --env-file ./Backend/.env -p 4002:4002 marckostar7321/chat-app-backen
 
 ### Open your browser and go to http://localhost:3001
 ### Server is running on http://localhost:4002
+
+## To run kubernetes deployments and services use these CMD
+
+kubectl apply -f backend-deployment.yaml
+
+kubectl apply -f frontend-deployment.yaml
+
+
+## To see deployments and services Run these CMD
+
+kubectl get deployments
+
+kubectl get services
+
+
