@@ -63,11 +63,13 @@ npm run build
 cd.. 
 
 ### In root directory run this cmd 
-docker build -t your docker username :v1 -f Fackend/Dockerfile .
+docker build -t your docker username :v1 -f Fackend/Dockerfile . 
+
 docker build -t your docker username :v1 -f Backend/Dockerfile .
 
 ### To push your image on docker hub run this cmd
 docker push your username -backend:v1 
+
 docker pushyour username -fackend:v1
 
 ### Like this- docker push marckostar7321/chat-app-backend:v1 
