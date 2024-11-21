@@ -32,7 +32,7 @@ spec:
     - protocol: TCP
       port: 4002
       targetPort: 4002
-  type: ClusterIP
+  type: LoadBalancer
 
 ---
 apiVersion: apps/v1
