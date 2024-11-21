@@ -1,24 +1,60 @@
-# Clone the repositary
 
-git clone https://github.com/MarckoAbhi/MernAppDocker.git
+# Docker Image For Chat app
 
-### Navigate to backend folder and install dependencies:
+[Introduction]
+This Project is a real time chat app built using MERN (MongoDB, Express, React, Node.Js) Stack.
+It provide basic functionalities to assist user to signup.
 
-cd backend
 
-npm install
 
-## Now go to root directory
-cd ..
 
-### Navigate to the frontend folder and install dependencies:
 
-  cd frontend
-  
-  npm install
 
-# Environment Variable 
-## In backend directory create a .env file and write this code to there 
+# Tech Stack
+
+**Client:** React.js tailwind for styling
+Socket.io
+
+**Server:** Node, Express, MongoDB
+
+**Docker Image** Docker Desktop, Kubernetes, minikube
+
+
+
+
+
+## Features
+
+- Signup and Login,
+- Chat to other 
+- Logout
+
+
+
+## Installation
+
+
+## Windows:
+
+Download Docker Desktop from Docker's official website.
+
+```bash
+ https://docs.docker.com/desktop/setup/install/windows-install/
+```
+
+ First install chocoloty run this CMD in POWERSHELL
+```bash
+ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+ "Install Kubernetes"Installation
+
+
+ ```bash
+ choco install kubernetes-cli
+```
+
+
+# Backend Environment Variable setup
 
 PORT=4002
 
@@ -34,69 +70,56 @@ JWT_TOKEN=
 ### To find JWT_TOKEN you can click on dropdown button at + button in your vs code terminal and click on Git Bash
 ### Now you type this CMD
 
-openssl rand -base64 32 
 
-## Now you find yor JWT TOKEN Copy and paste it in your .env file
+```bash
+ openssl rand -base64 32 
+```
 
-## Running Application 
-### For Backend
+## Now Copy and paste it in your .env file
 
-cd Backend
-npm start
 
-### For frontend
 
-npm run dev
+## Run Locally
 
-### Open your browser and go to http://localhost:3001
-### Server is running on http://localhost:4002
+Clone the project
 
-## Acknowledgement
-React.js
-Node.js
-MongoDB
-Socket.io
+```bash
+  git clone https://github.com/MarckoAbhi/MernAppDocker.git
+```
 
-## To creating Docker image Run these CMD- 
-cd Frontend
-npm run build
-cd.. 
+In root directory run this cmd 
 
-### In root directory run this cmd 
-docker build -t your docker username :v1 -f Fackend/Dockerfile . 
+```bash
+  docker build -t marckostar7321/chat-app-backend:v1 -f Fackend/Dockerfile . 
+```
+```bash
+  docker build -t marckostar7321/chat-app-frontend:v1 -f Fackend/Dockerfile . 
+```
 
-docker build -t your docker username :v1 -f Backend/Dockerfile .
+Start the server
 
-### To push your image on docker hub run this cmd
-docker push your username -backend:v1 
+```bash
+  docker run -p 3001:80 marckostar7321/chat-app-frontend:v1
+```
+```bash
+  docker run --env-file ./Backend/.env -p 4002:4002 marckostar7321/chat-app-backend:v1
+```
 
-docker pushyour username -fackend:v1
 
-### Like this- docker push marckostar7321/chat-app-backend:v1 
-## Compose up 
-docker-compose up --build   
-docker-compose down
 
-### To run docker frontend image and backend image -
 
-docker run -p 3001:80 marckostar7321/chat-app-frontend:v1
-
-docker run --env-file ./Backend/.env -p 4002:4002 marckostar7321/chat-app-backend:v1
-
-### Open your browser and go to http://localhost:3001
-### Server is running on http://localhost:4002
-
-## To run kubernetes deployments and services use these CMD
-
-kubectl apply -f backend-deployment.yaml
-
-kubectl apply -f frontend-deployment.yaml
-
+## Running Tests
 
 ## To see deployments and services Run these CMD
 
-kubectl get deployments
+```bash
+  kubectl get deployments
+```
+```bash
+  kubectl get services
+```
 
-kubectl get services
+Server is running on 
+port no 4002
 
-
+Frontend is running on port 80
