@@ -77,6 +77,16 @@ JWT_TOKEN=
 
 ## Now Copy and paste it in your .env file
 
+# To pull the backend  and frontend  docker image run this cmd
+
+```bash
+ docker pull marckostar7321/chat-app-backend:v1
+```
+
+```bash
+ docker pull marckostar7321/chat-app-frontend:v1
+```
+
 
 
 ## Run Locally
