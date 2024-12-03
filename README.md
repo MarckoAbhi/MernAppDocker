@@ -100,10 +100,10 @@ Clone the project
 In root directory run this cmd 
 
 ```bash
-  docker build -t marckostar7321/chat-app-backend:v1 -f Fackend/Dockerfile . 
+  docker build -t marckostar7321/chat-app-backend:v1 -f Backend/Dockerfile . 
 ```
 ```bash
-  docker build -t marckostar7321/chat-app-frontend:v1 -f Fackend/Dockerfile . 
+  docker build -t marckostar7321/chat-app-frontend:v1 -f Frontend/Dockerfile . 
 ```
 
 Start the server
