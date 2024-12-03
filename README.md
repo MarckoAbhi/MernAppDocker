@@ -1,13 +1,9 @@
-
+![image](https://github.com/user-attachments/assets/db5fefcb-0b7d-4e47-abda-2c7a3e98ee5b)
 # Docker Image For Chat app
 
 [Introduction]
 This Project is a real time chat app built using MERN (MongoDB, Express, React, Node.Js) Stack.
 It provide basic functionalities to assist user to signup.
-
-
-
-
 
 
 # Tech Stack
@@ -18,9 +14,6 @@ Socket.io
 **Server:** Node, Express, MongoDB
 
 **Docker Image** Docker Desktop, Kubernetes, minikube
-
-
-
 
 
 ## Features
@@ -77,16 +70,6 @@ JWT_TOKEN=
 
 ## Now Copy and paste it in your .env file
 
-# To pull the backend  and frontend  docker image run this cmd
-
-```bash
- docker pull marckostar7321/chat-app-backend:v1
-```
-
-```bash
- docker pull marckostar7321/chat-app-frontend:v1
-```
-
 
 
 ## Run Locally
@@ -114,12 +97,31 @@ Start the server
 ```bash
   docker run --env-file ./Backend/.env -p 4002:4002 marckostar7321/chat-app-backend:v1
 ```
+# To pull the backend  and frontend  docker image run this cmd
 
+```bash
+ docker pull marckostar7321/chat-app-backend:v1
+```
 
-
+```bash
+ docker pull marckostar7321/chat-app-frontend:v1
+```
 
 ## Running Tests
 
+## To create deployment and services run this cmd
+```bash
+ kubectl apply -f backend-deployment.yaml
+
+```
+
+```bash
+ kubectl apply -f frontend-deployment.yaml
+```
+## To Create a combined deployment and services run CMD
+```bash
+ kubectl apply -f combined-deployment-service.yaml
+```
 ## To see deployments and services Run these CMD
 
 ```bash
